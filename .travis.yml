@@ -4,6 +4,6 @@ osx_image: xcode9.3
 #xcode_scheme: Koosa
 #xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
 script:
-  - xcodebuild -scheme Koosa -project Koosa.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=11.3,name=iPhone X' build test
+  - xcodebuild -scheme Koosa -project Koosa.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=11.3,name=iPhone X' build test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -t 
