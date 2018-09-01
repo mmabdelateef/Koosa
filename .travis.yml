@@ -1,12 +1,7 @@
 language: objective-c
 osx_image: xcode9.3
-#xcode_project: Koosa.xcodeproj
-#xcode_scheme: Koosa
-#xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
-install:
-  - gem install xcpretty
-jobs:
-  include:
-    - script: xcodebuild clean build test -project Koosa.xcodeproj -scheme Koosa -destination "platform=iOS Simulator,name=iPhone 8,OS=11.2" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO | xcpretty -c
+xcode_project: Koosa.xcodeproj
+xcode_scheme: Koosa
+xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t 670f1e6a-23f0-44cc-bb20-119717c64cc2
+  - bash <(curl -s https://codecov.io/bash)
