@@ -1,1 +1,7 @@
-language: swift
+language: objective-c
+osx_image: xcode9.3
+xcode_project: Koosa.xcodeproj
+xcode_scheme: Koosa
+xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
