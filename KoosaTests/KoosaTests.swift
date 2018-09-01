@@ -61,7 +61,7 @@ class KoosaTests: XCTestCase {
         assert(!admin1.can(DeleteGroup(group: group2)))
         assert(!admin2.can(DeleteGroup(group: group1)))
         assert(admin2.can(DeleteGroup(group: group2)))
-        assert(superAdmin.can(DeleteGroup(group: group2)))
+        assert(!superAdmin.can(DeleteGroup(group: group2)))
     }
 }
 
