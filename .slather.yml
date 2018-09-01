@@ -1,0 +1,9 @@
+coverage_service: cobertura_xml
+xcodeproj: Koosa.xcodeproj
+scheme: Koosa
+configuration: TestedConfiguration
+source_directory: path/to/sources/to/include
+output_directory: path/to/xml_report
+#ignore:
+#  - ExamplePodCode/*
+#  - ProjectTestsGroup/*
