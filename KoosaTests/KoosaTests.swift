@@ -28,7 +28,7 @@ class KoosaTests: XCTestCase {
         }
         
         GroupMemberUser.shouldBeAbleTo(BrowseGroup.action).when {
-            guard let groupMember = $0 as? GroupMemberUser,
+            guard let groupMember = $0 as? GroupMember,
                 let browseAction = $1 as? BrowseGroup else { return false }
             return groupMember.groupNumber == browseAction.group.groupNumber
         }
@@ -58,6 +58,7 @@ class KoosaTests: XCTestCase {
         assert(visitor.can(BrowseGroup(group: group2)))
         assert(!visitor.can(DeleteGroup(group: group1)))
         assert(admin1.can(DeleteGroup(group: group1)))
+        assert(admin1.can(BrowseGroup(group: group1)))
         assert(!admin1.can(DeleteGroup(group: group2)))
         assert(!admin2.can(DeleteGroup(group: group1)))
         assert(admin2.can(DeleteGroup(group: group2)))
