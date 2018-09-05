@@ -8,22 +8,22 @@
 
 import Foundation
 
-protocol Action {
+public protocol Action {
     init()
     static var action: Action.Type { get }
 }
 
-extension Action {
+public extension Action {
     static var action: Action.Type { return Self.self }
 }
 
-protocol Role {
+public protocol Role {
     init()
     static func shouldBeAbleTo (_ action: Action.Type) -> Rule
     func can (_ action: Action) -> Bool
 }
 
-extension Role {
+public extension Role {
     
     static func shouldBeAbleTo(_ action: Action.Type) -> Rule {
         let rule = Rule(action: action.init(), role: self.init())
@@ -45,7 +45,7 @@ extension Role {
     }
 }
 
-internal class Rule {
+public class Rule {
     
     let action: Action
     let role: Role
@@ -60,9 +60,9 @@ internal class Rule {
         return condition?(role, action) ?? false
     }
     
-    func when(condition: @escaping (Role, Action) -> Bool) {
+    public func when(condition: @escaping (Role, Action) -> Bool) {
         self.condition = condition
     }
 }
 
-var rules = [Rule]()
+internal var rules = [Rule]()

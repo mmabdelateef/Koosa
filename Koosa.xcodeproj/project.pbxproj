@@ -21,6 +21,27 @@
 			remoteGlobalIDString = 0693FAD02139926100939364;
 			remoteInfo = Koosa;
 		};
+		0693FB9A213C64CD00939364 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0693FB94213C64CB00939364 /* Example.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0693FB63213C64CA00939364;
+			remoteInfo = Example;
+		};
+		0693FB9C213C64CD00939364 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0693FB94213C64CB00939364 /* Example.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0693FB77213C64CB00939364;
+			remoteInfo = ExampleTests;
+		};
+		0693FB9E213C64CD00939364 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0693FB94213C64CB00939364 /* Example.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0693FB82213C64CB00939364;
+			remoteInfo = ExampleUITests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +52,7 @@
 		0693FADF2139926200939364 /* KoosaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoosaTests.swift; sourceTree = "<group>"; };
 		0693FAE12139926200939364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0693FAEB2139927200939364 /* Koosa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Koosa.swift; sourceTree = "<group>"; };
+		0693FB94213C64CB00939364 /* Example.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Example.xcodeproj; path = Example/Example.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +77,7 @@
 		0693FAC72139926100939364 = {
 			isa = PBXGroup;
 			children = (
+				0693FB94213C64CB00939364 /* Example.xcodeproj */,
 				0693FAD32139926100939364 /* Koosa */,
 				0693FADE2139926200939364 /* KoosaTests */,
 				0693FAD22139926100939364 /* Products */,
@@ -87,6 +110,16 @@
 				0693FAE12139926200939364 /* Info.plist */,
 			);
 			path = KoosaTests;
+			sourceTree = "<group>";
+		};
+		0693FB95213C64CB00939364 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0693FB9B213C64CD00939364 /* Example.app */,
+				0693FB9D213C64CD00939364 /* ExampleTests.xctest */,
+				0693FB9F213C64CD00939364 /* ExampleUITests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +201,12 @@
 			mainGroup = 0693FAC72139926100939364;
 			productRefGroup = 0693FAD22139926100939364 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0693FB95213C64CB00939364 /* Products */;
+					ProjectRef = 0693FB94213C64CB00939364 /* Example.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0693FAD02139926100939364 /* Koosa */,
@@ -175,6 +214,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0693FB9B213C64CD00939364 /* Example.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Example.app;
+			remoteRef = 0693FB9A213C64CD00939364 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0693FB9D213C64CD00939364 /* ExampleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ExampleTests.xctest;
+			remoteRef = 0693FB9C213C64CD00939364 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0693FB9F213C64CD00939364 /* ExampleUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ExampleUITests.xctest;
+			remoteRef = 0693FB9E213C64CD00939364 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0693FACF2139926100939364 /* Resources */ = {
