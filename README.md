@@ -1,6 +1,4 @@
-# Koosa
-[![Build Status](https://travis-ci.org/mmabdelateef/Koosa.svg?branch=master)](https://travis-ci.org/mmabdelateef/Koosa) [![Coverage Status](https://coveralls.io/repos/github/mmabdelateef/Koosa/badge.svg?branch=master)](https://coveralls.io/github/mmabdelateef/Koosa?branch=master)
-
+# Koosa[![Build Status](https://travis-ci.org/mmabdelateef/Koosa.svg?branch=master)](https://travis-ci.org/mmabdelateef/Koosa) [![Coverage Status](https://coveralls.io/repos/github/mmabdelateef/Koosa/badge.svg?branch=master)](https://coveralls.io/github/mmabdelateef/Koosa?branch=master)
 Attributed Role-based Access Control For Swift (WIP)
 
 ## Usage
