@@ -1,4 +1,6 @@
 # Koosa
+[![Build Status](https://travis-ci.org/mmabdelateef/Koosa.svg?branch=master)](https://travis-ci.org/mmabdelateef/Koosa) [![Coverage Status](https://coveralls.io/repos/github/mmabdelateef/Koosa/badge.svg?branch=master)](https://coveralls.io/github/mmabdelateef/Koosa?branch=master)
+
 Attributed Role-based Access Control For Swift (WIP)
 
 ## Usage
@@ -10,7 +12,7 @@ Attributed Role-based Access Control For Swift (WIP)
   </tr>
   <tr>
     <td/>
-    <th rowspan="100"><img src="https://media.giphy.com/media/dYGhmIvkDHlvSxsWum/giphy.gif"></th>
+    <th rowspan="20"><img src="https://media.giphy.com/media/dYGhmIvkDHlvSxsWum/giphy.gif"></th>
   </tr>
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
