@@ -1,9 +1,9 @@
 # Koosa&nbsp;&nbsp;&nbsp;[![Build Status](https://travis-ci.org/mmabdelateef/Koosa.svg?branch=master)](https://travis-ci.org/mmabdelateef/Koosa) [![Coverage Status](https://coveralls.io/repos/github/mmabdelateef/Koosa/badge.svg?branch=master)](https://coveralls.io/github/mmabdelateef/Koosa?branch=master)
 A simple Attributed Role-based Access Control For Swift
-#### Check out this blog post for full explanation and more details: [Access Control Management with Swift](https://github.com/joemccann/dillinger/blob/master/KUBERNETES.md)
+#### Check out this blog post for full explanation and more details: [Access Control Management with Swift]()
 
 ## Example
-
+![](imgs/PolicyExample.png)
 <table>
   <tr>
     <th width="50%">Code</th>
