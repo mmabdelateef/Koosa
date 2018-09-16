@@ -54,7 +54,7 @@ A simple Attributed Role-based Access Control For Swift
 
 ## Usage:
 
-1. Start by mapping each role in your requirements to a protocl that extends to prtocol `Role` or a protocl that extends it. Note that you can model role heirarchy using protocl inheritance. For example
+1. Start by mapping each role in your requirements to a protocl that extends to prtocol `Role` or a protocl that extends it. Note that you can model role heirarchy using protocl inheritance.
 ```swift
 protocol GroupMember: Role {
     var groupNumber: Int {set get}
@@ -62,7 +62,7 @@ protocol GroupMember: Role {
 protocol GroupAdmin: GroupMember { }
 ```
 
-2. Model your actions into classes/strcut that conforms to protocl `Action`
+2. Model your actions into classes/strcut that conforms to protocl `Action`.
 ```swift
 struct BrowseGroup: Action {
     let group: Group
@@ -76,21 +76,7 @@ struct BrowseGroup: Action {
     }
 }
 ```
-3. Use role protocls to create concrete role classes 
-```swift
-struct BrowseGroup: Action {
-    let group: Group
-    
-    init() {  // required default initializer
-        group = Group(groupNumber: -1, isPublicGroup: false) // default froup
-    }
-    
-    init(group: Group) {
-        self.group = group
-    }
-}
-```
-4. Add the policies
+3. Use role protocls to create concrete role classes.
 ```swift
 class GroupAdminUser: User, GroupAdmin {
     var groupNumber: Int
@@ -105,13 +91,33 @@ class GroupAdminUser: User, GroupAdmin {
     }
 }
 ```
-5. Now you can validate if any user can do any action
+4. Add the policies.
+```swift
+GroupMemberUser.shouldBeAbleTo(BrowseGroup.action).when {
+    guard let groupMember = $0 as? GroupMember,
+        let browseAction = $1 as? BrowseGroup else { return false }
+    return groupMember.groupNumber == browseAction.group.groupNumber
+}
+GroupAdminUser.shouldBeAbleTo(DeleteGroup.action).when {
+    guard let groupAdmin = $0 as? GroupAdminUser,
+        let deleteAction = $1 as? DeleteGroup else {
+            return false
+    }
+    return groupAdmin.groupNumber == deleteAction.group.groupNumber
+}
+_ = SuperAdminUser.shouldBeAbleTo(BrowseGroup.action)
+```
+5. Now you can validate if any user can do any action.
 ```swift
 let member1 = GroupMemberUser(name: "member1", age: 18, groupNumber: 1)
+let admin2 = GroupAdminUser(name: "admin2", age: 22, groupNumber: 2)
 let group1 = Group(groupNumber: 1, isPublicGroup: false)
 let group2 = Group(groupNumber: 2, isPublicGroup: false)
 member1.can(BrowseGroup(group: group1) // true
 member1.can(BrowseGroup(group: group2) // false
+admin2.can(BrowseGroup(group: group1) // true: GroupAdmin inherits BrowseGroup permission from GroupMember
+admin2.can(DeleteGroup(group: group2) // true
+admin2.can(DeleteGroup(group: group1) // false
 ```
 
 ## Installation
