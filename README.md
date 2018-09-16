@@ -52,7 +52,7 @@ A simple Attributed Role-based Access Control For Swift
   </tr>
 </table>
 
-**Usage:**
+## Usage:
 
 1. Start by mapping each role in your requirements to a protocl that extends to prtocol `Role` or a protocl that extends it. Note that you can model role heirarchy using protocl inheritance. For example
 ```swift
