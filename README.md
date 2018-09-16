@@ -3,7 +3,7 @@ A simple Attributed Role-based Access Control For Swift
 #### Check out this blog post for full explanation and more details: [Access Control Management with Swift](https://github.com/joemccann/dillinger/blob/master/KUBERNETES.md)
 
 ## Example
-
+![](imgs/PolicyExample.png)
 <table>
   <tr>
     <th width="50%">Code</th>
