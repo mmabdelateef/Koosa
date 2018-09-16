@@ -23,8 +23,11 @@ class KoosaTests: XCTestCase {
         
         GroupAdminUser.shouldBeAbleTo(DeleteGroup.action).when {
             guard let groupAdmin = $0 as? GroupAdminUser,
-                let deleteAction = $1 as? DeleteGroup else { return false }
-            return groupAdmin.groupNumber == deleteAction.group.groupNumber
+                let deleteAction = $1 as? DeleteGroup else {
+                    return false
+            }
+            return groupAdmin.groupNumber ==
+                deleteAction.group.groupNumber
         }
         
         GroupMemberUser.shouldBeAbleTo(BrowseGroup.action).when {
@@ -33,7 +36,7 @@ class KoosaTests: XCTestCase {
             return groupMember.groupNumber == browseAction.group.groupNumber
         }
         
-        Visitor.shouldBeAbleTo(BrowseGroup.action).when {
+        AnonymousUser.shouldBeAbleTo(BrowseGroup.action).when {
             guard let browseAction = $1 as? BrowseGroup else { return false }
             return browseAction.group.isPublicGroup
         }
@@ -45,7 +48,7 @@ class KoosaTests: XCTestCase {
         let group1 = Group(groupNumber: 1, isPublicGroup: false)
         let group2 = Group(groupNumber: 2, isPublicGroup: true)
         
-        let visitor = Visitor()
+        let visitor = AnonymousUser()
         let member1 = GroupMemberUser(name: "member1", age: 18, groupNumber: 1)
         let member2 = GroupMemberUser(name: "member2", age: 22, groupNumber: 2)
         let admin1 = GroupAdminUser(name: "admin1", age: 18, groupNumber: 1)
@@ -87,7 +90,7 @@ class User {
     }
 }
 
-class VisitorUser: User { }
+//class VisitorUser: User { }
 class GroupMemberUser: User, GroupMember {
     var groupNumber: Int
     init(name: String, age: Int, groupNumber: Int) {
@@ -124,8 +127,14 @@ class SuperAdminUser: User, SuperAdmin {
     }
 }
 
-class Visitor: Role {
-    required init() {}
+protocol Anonymous: Role {
+    
+}
+
+class AnonymousUser: User, Anonymous {
+    required override init() {
+        super.init()
+    }
 }
 
 struct Group {
@@ -165,5 +174,4 @@ struct DeleteGroup: Action {
         self.group = group
     }
 }
-
 

@@ -19,16 +19,15 @@ public extension Action {
 
 public protocol Role {
     init()
-    static func shouldBeAbleTo (_ action: Action.Type) -> Rule
+    static func shouldBeAbleTo (_ action: Action.Type) -> Policy
     func can (_ action: Action) -> Bool
 }
 
 public extension Role {
     
-    static func shouldBeAbleTo(_ action: Action.Type) -> Rule {
-        let rule = Rule(action: action.init(), role: self.init())
+    static func shouldBeAbleTo(_ action: Action.Type) -> Policy {
+        let rule = Policy(action: action.init(), role: self.init())
         rule.condition = { role, action in
-            
             guard role is Self else {
                 return false
             }
@@ -45,7 +44,7 @@ public extension Role {
     }
 }
 
-public class Rule {
+public class Policy {
     
     let action: Action
     let role: Role
@@ -65,4 +64,4 @@ public class Rule {
     }
 }
 
-internal var rules = [Rule]()
+internal var rules = [Policy]()

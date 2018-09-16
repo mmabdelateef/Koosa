@@ -55,9 +55,7 @@ class User {
         self.age = age
     }
     
-    init() {
-        
-    }
+    init() { }
 }
 
 class VisitorUser: User { }
