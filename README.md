@@ -10,10 +10,6 @@ Declarative Swift framework for Attributed Role-based Access Control management
     <th width="50%">In Action</th>
   </tr>
   <tr>
-    <td/>
-    <th rowspan="20"><img src="https://media.giphy.com/media/dYGhmIvkDHlvSxsWum/giphy.gif"></th>
-  </tr>
-  <tr>
     <td><div class="highlight highlight-source-swift"><pre>
     
     // Anyone can browse group, if it is public
@@ -49,6 +45,7 @@ Declarative Swift framework for Attributed Role-based Access Control management
     _ = SuperAdminUser.shouldBeAbleTo(PostToGroup.action)
     
 </pre></div></td>
+    <td rowspan="20"><img src="https://media.giphy.com/media/dYGhmIvkDHlvSxsWum/giphy.gif"></th>
   </tr>
 </table>
 
